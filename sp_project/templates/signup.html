@@ -1,0 +1,57 @@
+{% load static %}
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <h2>Signup</h2>
+    {% if messages %}
+      {% for message in messages %}
+      <p class="{{ message.tags }}">{{ message }}</p>
+        <!-- <p class="error-message">{{ message }}</p> -->
+      {% endfor %}
+    {% endif %}
+    <form method="post" class="signup-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="signup-button">Signup</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}" class="login-link">Login</a></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- {% include 'navbar.html' %} 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    
+</head>
+<body>
+    <h2>Signup</h2>
+    {% if messages %}
+      {% for message in messages %}
+        <p style="color: red;">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Signup</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</body>
+</html> -->

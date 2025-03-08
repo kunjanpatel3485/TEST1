@@ -1,0 +1,60 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('../images/stock-bg.jpg') center/cover;
+    color: white;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 1em;
+}
+
+/* Market Overview */
+.market-overview {
+    padding: 40px 20px;
+    background: #fff;
+}
+
+.market-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.market-card {
+    background: #eee;
+    padding: 15px;
+    border-radius: 8px;
+    width: 180px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}

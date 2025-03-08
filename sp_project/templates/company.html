@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company</title>
+    <link rel="stylesheet" href="{% static 'css/company.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Company Listings</h1>
+
+        {% if companies %}
+            <div class="company-container">
+                {% for company in companies %}
+                    <div class="card">
+                        <h3>{{ company.companyName }}</h3>
+                        <p><strong>Symbol:</strong> {{ company.symbol }}</p>
+                        <p><strong>Price:</strong> ${{ company.currentPrice }}</p>
+                        <form action="{% url 'add_to_watchlist' company.stockID %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="watchlist-btn">Add to Watchlist</button>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="no-data">No companies found. Please add stock data.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

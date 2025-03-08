@@ -1,0 +1,55 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Stock Market</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Share Market Tracker</h1>
+            {% if user.is_authenticated %}
+                <p>Hello, <strong>{{ user.username }}</strong>! You are logged in.</p>
+                <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+            {% else %}
+                <p>Track stocks, manage your watchlist, and make smarter investments.</p>
+                <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+                <a href="{% url 'signup' %}" class="btn btn-success">Signup</a>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Market Overview -->
+    <section class="market-overview">
+        <h2>Stock Market Overview</h2>
+        <div class="market-container">
+            <div class="market-card">
+                <h3>Sensex</h3>
+                <p>📈 74,500 (+1.2%)</p>
+            </div>
+            <div class="market-card">
+                <h3>NIFTY 50</h3>
+                <p>📉 22,350 (-0.5%)</p>
+            </div>
+            <div class="market-card">
+                <h3>Dow Jones</h3>
+                <p>📈 39,500 (+0.8%)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Share Market Tracker | All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

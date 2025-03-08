@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">KOT Invest</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="{% url 'watchlist' %}">Watchlist</a></li>
+                    <li><a href="{% url 'company' %}">Company</a></li>
+                    <li><a href="{% url 'nifty' %}">Nifty</a></li>
+                    <li><a href="{% url 'news' %}">News</a></li>
+                    <li><a href="#">Sensex</a></li>
+                    <li><a href="#">Subscribe</a></li>
+                    <li><a href="#">About Us</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'signup' %}">Signup</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>

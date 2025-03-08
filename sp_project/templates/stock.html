@@ -1,0 +1,74 @@
+<!-- {% include 'navbar.html' %}  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIFTY 50 Stock Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .market-summary {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>NIFTY 50 Stock Analysis</h1>
+    <div class="market-summary">
+        <h2>22,545.05</h2>
+        <p style="color: red;">-2.50 (0.011%) ↓ today</p>
+        <p>27 Feb, 3:31 pm IST</p>
+        <p><strong>Open:</strong> 22,568.95 | <strong>High:</strong> 22,613.30 | <strong>Low:</strong> 22,508.40</p>
+        <p><strong>Prev Close:</strong> 22,547.55 | <strong>52-wk High:</strong> 26,277.35 | <strong>52-wk Low:</strong> 21,281.45</p>
+    </div>
+    <div class="chart-container">
+        <canvas id="niftyChart"></canvas>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById("niftyChart").getContext("2d");
+            const niftyChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: ["09:15", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00"],
+                    datasets: [{
+                        label: "NIFTY 50",
+                        data: [22587.70, 22550, 22540, 22530, 22520, 22560, 22545],
+                        borderColor: "red",
+                        fill: false,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: { title: { display: true, text: "Time" } },
+                        y: { title: { display: true, text: "Index Value" } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

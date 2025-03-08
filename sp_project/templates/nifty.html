@@ -1,0 +1,105 @@
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nifty Rate - KOT Invest</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fb;
+        }
+
+        /* Page content */
+        .container {
+            margin-top: 80px; /* To prevent overlap with fixed navbar */
+            padding: 20px;
+        }
+
+        /* Page title */
+        .page-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Description section */
+        .nifty-description {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nifty-description h2 {
+            font-size: 28px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .nifty-description p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #343a40;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <h1 class="page-title">Nifty 50 Rate</h1>
+
+        <!-- Embedded TradingView Widget for Nifty Rate -->
+        <div class="chart-container">
+            <iframe src="https://www.tradingview.com/embed-widget/market-overview/?locale=en#%7B%22symbols%22%3A%5B%7B%22s%22%3A%22NSE%3ANIFTY%22%7D%5D%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Atrue%2C%22showVolume%22%3Afalse%2C%22showTimestamps%22%3Afalse%2C%22showSymbolLogo%22%3Atrue%2C%22height%22%3A500%7D"
+                width="100%" height="500" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+        </div>
+
+        <!-- Description Section -->
+        <div class="nifty-description">
+            <h2>What is Nifty 50?</h2>
+            <p>The Nifty 50 is a stock market index representing the top 50 companies listed on the National Stock Exchange (NSE) of India. It serves as one of the most important benchmarks for the performance of the Indian stock market.</p>
+            <p>The index includes companies from various sectors, such as banking, energy, IT, and consumer goods. Tracking the Nifty 50 helps investors monitor market trends and make informed investment decisions.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 KOT Invest | All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
