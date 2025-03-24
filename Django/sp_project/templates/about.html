@@ -1,0 +1,24 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Stock Market Analysis</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to <span class="highlight">Stock Market Analysis</span>, your trusted platform for real-time market insights.</p>
+        <p>Our mission is to empower investors with cutting-edge analytics, <span class="highlight">AI-driven predictions</span>, and intuitive tools to help you stay ahead in the stock market.</p>
+        <p>From tracking live stock movements to building personalized watchlists, we provide a seamless and engaging experience for traders of all levels.</p>
+        <p>Join thousands of investors who rely on our platform for smarter trading decisions.</p>
+        <div class="cta">
+            <a href="{% url 'nifty' %}">Get Started</a>
+        </div>
+    </div>
+</body>
+</html>

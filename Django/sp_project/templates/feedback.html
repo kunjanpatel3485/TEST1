@@ -1,0 +1,22 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Stock Market Analysis</title>
+    <link rel="stylesheet" href="{% static 'css/feedback.css' %}">
+</head>
+<body>
+    <div class="contact-form">
+        <h2>Feedback Form</h2>
+        <form action="{% url 'feedback' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>

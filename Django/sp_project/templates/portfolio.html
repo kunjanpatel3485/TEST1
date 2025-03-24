@@ -1,0 +1,48 @@
+{% load static %}
+{% include 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Stock Market Analysis</title>
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>My Portfolio</h1>
+        <div class="portfolio-summary">
+            <p><strong>Total Investment:</strong> ₹{{ total_investment }}</p>
+            <p><strong>Risk Level:</strong> {{ risk_level }}</p>
+        </div>
+        <table class="portfolio-table">
+            <thead>
+                <tr>
+                    <th>Stock</th>
+                    <th>Symbol</th>
+                    <th>Current Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in portfolio.stocks.all %}
+                <tr>
+                    <td>{{ stock.companyName }}</td>
+                    <td>{{ stock.symbol }}</td>
+                    <td>₹{{ stock.currentPrice }}</td>
+                    <td>{{ stock.quantity }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No stocks in portfolio</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="cta">
+            <a href="{% url 'company' %}">Add More Stocks</a>
+        </div>
+    </div>
+</body>
+</html>
